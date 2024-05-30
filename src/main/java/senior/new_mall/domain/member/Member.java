@@ -1,4 +1,4 @@
-package senior.new_mall.domain;
+package senior.new_mall.domain.member;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

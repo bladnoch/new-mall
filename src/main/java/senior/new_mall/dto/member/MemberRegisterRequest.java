@@ -1,4 +1,4 @@
-package senior.new_mall.dto;
+package senior.new_mall.dto.member;
 
 import lombok.Getter;
 

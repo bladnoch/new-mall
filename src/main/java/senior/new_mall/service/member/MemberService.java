@@ -1,13 +1,14 @@
-package senior.new_mall.service;
+package senior.new_mall.service.member;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import senior.new_mall.domain.Member;
-import senior.new_mall.domain.MemberRepository;
-import senior.new_mall.dto.MemberLoginRequest;
-import senior.new_mall.dto.MemberLoginResponse;
-import senior.new_mall.dto.MemberRegisterRequest;
+import org.springframework.transaction.annotation.Transactional;
+import senior.new_mall.domain.member.Member;
+import senior.new_mall.domain.member.MemberRepository;
+import senior.new_mall.dto.member.MemberLoginRequest;
+import senior.new_mall.dto.member.MemberLoginResponse;
+import senior.new_mall.dto.member.MemberRegisterRequest;
 
 import java.util.Map;
 
@@ -17,6 +18,7 @@ public class MemberService {
 
     private final MemberRepository memberRepository;
 
+    @Transactional
     public ResponseEntity<?> registerMember(MemberRegisterRequest request) {
         // if member does not exist
         // register member
@@ -34,6 +36,7 @@ public class MemberService {
         );
     }
 
+    @Transactional
     public ResponseEntity<?> loginMember(MemberLoginRequest request) {
 
         // not exist

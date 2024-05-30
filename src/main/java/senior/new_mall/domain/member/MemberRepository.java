@@ -1,4 +1,4 @@
-package senior.new_mall.domain;
+package senior.new_mall.domain.member;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
