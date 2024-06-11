@@ -23,6 +23,7 @@ public class ProductService {
             throw new IllegalArgumentException("이름과 가격을 입력해주세요");
         }
 
+        // save product
         productRepository.save(new Product(request.getName(), request.getDescription(), request.getPrice()));
         Product currentProduct= productRepository.findByNameAndDescriptionAndPrice(request.getName(), request.getDescription(), request.getPrice())
                 .orElseThrow(IllegalArgumentException::new);
