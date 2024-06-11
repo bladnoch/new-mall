@@ -10,6 +10,5 @@ public class MemberRegisterRequest {
     }
 
     private String email;
-
     private String password;
 }
