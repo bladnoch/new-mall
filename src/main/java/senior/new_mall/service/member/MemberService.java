@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import senior.new_mall.domain.member.Member;
 import senior.new_mall.domain.member.MemberRepository;
+import senior.new_mall.dto.member.MemberLoginRequest;
 import senior.new_mall.dto.member.MemberRegisterRequest;
 
 @Service
@@ -31,4 +32,14 @@ public class MemberService {
         }
     }
 
+    @Transactional
+    public Long loginMember(MemberLoginRequest request) {
+        // 등록되어 있는지 조회
+        if (memberRepository.findByEmail(request.getEmail()).isPresent()) {
+            return memberRepository.findByEmail(request.getEmail()).get().getId();
+        } else {
+            // 없을경우
+            throw new IllegalArgumentException("회원가입 되어 있지 않습니다.");
+        }
+    }
 }

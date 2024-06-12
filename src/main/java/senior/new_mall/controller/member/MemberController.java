@@ -25,8 +25,8 @@ public class MemberController {
     // login
     @PostMapping("login")
     public Long login(@RequestBody MemberLoginRequest request) {
-
-        return 0L;
+        // memberId 반환
+        return memberService.loginMember(request);
     }
 
 
