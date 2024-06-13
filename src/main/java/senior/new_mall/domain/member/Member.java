@@ -23,7 +23,7 @@ public class Member {
     private String email;
     private String password;
 
-    @OneToMany(mappedBy = "member")
-    private List<Post> posts = new ArrayList<>();
+//    @OneToMany(mappedBy = "member")
+//    private List<Post> posts = new ArrayList<>();
 
 }

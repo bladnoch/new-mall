@@ -32,14 +32,15 @@ public class MemberService {
         }
     }
 
-    @Transactional
     public Long loginMember(MemberLoginRequest request) {
-        // 등록되어 있는지 조회
-        if (memberRepository.findByEmail(request.getEmail()).isPresent()) {
+        // 이메일 확인 조회
+        Member currentMember = memberRepository.findByEmail(request.getEmail()).orElseThrow(IllegalStateException::new);
+        // 비밀번호 확인
+        if (currentMember.getPassword().equals(request.getPassword())) {
             return memberRepository.findByEmail(request.getEmail()).get().getId();
         } else {
             // 없을경우
-            throw new IllegalArgumentException("회원가입 되어 있지 않습니다.");
+            throw new IllegalArgumentException("비밀번호가 틀렸습니다.");
         }
     }
 }

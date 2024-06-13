@@ -21,11 +21,10 @@ public class PostController {
     }
 
     // 개시글 타이틀 불러오기
-//    @GetMapping("/post/titles")
-//    public List<PostTitlesResponse> getTitles() {
-//        postService.getTitles();
-//        return new List<TitleResponse>();
-//    }
+    @GetMapping("/post/titles")
+    public List<Post> getTitles() {
+        return postService.getTitles();
+    }
 
     // 개시글 한개 불러오기
     @GetMapping("/post/getPost")

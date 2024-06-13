@@ -12,10 +12,10 @@ import senior.new_mall.domain.member.Member;
 @Getter
 public class Post {
 
-    public Post(String title, String content,Member member) {
+    public Post(String title, String content, Long memberId) {
         this.title = title;
         this.content = content;
-        this.member = member;
+        this.memberId = memberId;
     }
 
     @Id
@@ -27,11 +27,5 @@ public class Post {
 
     @Lob
     private String content;
-
-    @JoinColumn(nullable = false)
-    @ManyToOne
-    private Member member;
-
-
-
+    private Long memberId;
 }
