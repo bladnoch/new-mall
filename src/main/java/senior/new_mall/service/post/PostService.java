@@ -15,7 +15,7 @@ public class PostService {
     // 개시글 저장
     public void postContent(PostCreateRequest request) {
         // db에 저장
-        postRepository.save(new Post(request.getTitle(), request.getContent(), request.getMemberId()));
+        postRepository.save(new Post(request.getTitle(), request.getContent()));
     }
 
 //    // 개시글 타이틀 불러오기

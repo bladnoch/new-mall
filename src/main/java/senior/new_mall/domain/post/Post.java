@@ -12,14 +12,15 @@ import senior.new_mall.domain.member.Member;
 @Getter
 public class Post {
 
-    public Post(String title, String content, Long memberId) {
+    public Post(String title, String content,Member member) {
         this.title = title;
         this.content = content;
+        this.member = member;
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id=null;
 
 
     private String title;
