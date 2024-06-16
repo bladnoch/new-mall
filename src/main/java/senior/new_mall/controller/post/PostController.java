@@ -14,7 +14,9 @@ public class PostController {
 
     private final PostService postService;
 
-    // 개시글 저장
+    // Post : id, title, content, memberId
+
+     // 개시글 저장
     @PostMapping("/post")
     public void postContent(@RequestBody PostCreateRequest request) { // title, content, memberId
         postService.postContent(request);

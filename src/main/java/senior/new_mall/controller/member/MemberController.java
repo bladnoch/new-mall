@@ -15,6 +15,8 @@ public class MemberController {
 
     private final MemberService memberService;
 
+    // Member : id, email, password
+
     // register
     @PostMapping("/register")
     public Long register(@RequestBody MemberRegisterRequest request) { // email, password
