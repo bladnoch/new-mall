@@ -16,7 +16,7 @@ public class PostController {
 
     // 개시글 저장
     @PostMapping("/post")
-    public void postContent(@RequestBody PostCreateRequest request) {
+    public void postContent(@RequestBody PostCreateRequest request) { // title, content, memberId
         postService.postContent(request);
     }
 
